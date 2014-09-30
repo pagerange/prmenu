@@ -4,7 +4,7 @@ Very lightweight, responsive menu plugin for jQuery.
 
 ## How to use
 
-Set up you menu as standard ul with li.  Nest sub-menus as you need them:
+Set up your menu as standard ul with li.  Nest sub-menus as you need them:
 
 ```html
 
