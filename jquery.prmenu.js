@@ -15,11 +15,11 @@
  *
  *	var options = {
  *			maintain_ratio: false,  // default true (on window resize),
- link: #000000,
- visited: #000000,
- hover: #666666,
- active: 666666
- current: #444444
+ *			link: #000000,
+ *			visited: #000000,
+ *			hover: #666666,
+ *			active: 666666
+ *			current: #444444
  *				   }
  *
  * $('ul#mymenu').prmenu(options);
