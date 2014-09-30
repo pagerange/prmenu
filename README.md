@@ -44,7 +44,7 @@ Set up you menu as standard ul with li.  Nest sub-menus as you need them:
 
 ```
 
-Active the menu when the document is ready:
+Activate the menu when the document is ready:
 
 ```js
 
@@ -56,11 +56,11 @@ $(document).ready(function(){
 
 ## Demo
 
-xRequest [live demo](http://pagerange.com/jquery/prmenu)
+PrMenu [live demo](http://pagerange.com/jquery/prmenu)
 
 ## History
 
-Please see the [the releases](https://github.com/pagerange/prmenu/releases) changelog.
+Please see [the releases](https://github.com/pagerange/prmenu/releases) changelog.
 
 ## License
 
