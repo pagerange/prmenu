@@ -7,22 +7,11 @@
  */
 
 /*
- * Usage:
- *
- * $('ul#mymenu').prmenu();
- *
- * Optionally, you can override all defaults:
- *
- *	var options = {
- *			maintain_ratio: false,  // default true (on window resize),
- *			link: #000000,
- *			visited: #000000,
- *			hover: #666666,
- *			active: 666666
- *			current: #444444
- *				   }
- *
- * $('ul#mymenu').prmenu(options);
+ *   Usage:
+ * 
+ *   $(document).ready(function(){
+ * 	$('ul#mymenu').prmenu();
+ *   });
  *
  *
  */
@@ -36,6 +25,7 @@
 	$.prmenu = function(element, options) {
 
 		// Set default options for plugin
+		// Not yet implemented... can't be changed
 		var defaults = {
 			maintain_ratio: true,
 			link: '#000000',
