@@ -10,9 +10,13 @@
  *   Usage:
  * 
  *   $(document).ready(function(){
- * 	$('ul#mymenu').prmenu();
+ * 	    $('ul#mymenu').prmenu();
  *   });
  *
+ *   Note:
+ *
+ *   Options passed into the plugin are not yet used.  
+ *   Menu styling, link color, etc., can be adjusted in the CSS for now.
  *
  */
 
