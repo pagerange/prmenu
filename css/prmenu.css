@@ -4,7 +4,7 @@
  * @description: CSS required for responsive menu
  * @author: Steve George, steve@pagerange.com
  * @created_at: Sep 28, 2013
- * @updated_at: Sep 30, 2013
+ * @updated_at: Aug 12, 2015
  *
  * License:  PrMenu is released under the MIT License.
  * https://github.com/pagerange/prmenu/blob/master/LICENSE
@@ -138,11 +138,11 @@ div.prmenu_container ul li ul li ul li {
 	display: none;
 }
 
-div.prmenu_container ul li ul li:hover ul {
+div.prmenu_container ul li ul li:hover > ul {
 	display: block;
 }
 
-div.prmenu_container ul li ul li:hover ul li {
+div.prmenu_container ul li ul li:hover > ul > li {
 	display: block;
 }
 
@@ -161,8 +161,25 @@ div.prmenu_container ul li ul li a:active {
 	background-color: #777777;
 }
 
+div.prmenu_container ul li ul li a:link,
+div.prmenu_container ul li ul li a:visited {
+	background-color: #444444;
+}
 
+div.prmenu_container ul li ul li a:hover,
+div.prmenu_container ul li ul li a:active {
+	background-color: #777777;
+}
 
+div.prmenu_container ul li ul li a:link,
+div.prmenu_container ul li ul li a:visited {
+	background-color: #555555;
+}
+
+div.prmenu_container ul li ul li a:hover,
+div.prmenu_container ul li ul li a:active {
+	background-color: #777777;
+}
 
 
 
@@ -271,7 +288,24 @@ and (max-width : 959px) {
 	/* SUB MENU  */
 
 
-	div.prmenu_container ul li ul {
+	div.prmenu_container ul li ul,
+	div.prmenu_container ul li ul li,
+	div.prmenu_container ul li ul li ul,
+	div.prmenu_container ul li ul li ul li,
+	div.prmenu_container ul li ul li ul li ul, 
+	div.prmenu_container ul li ul li ul li ul li,
+	div.prmenu_container ul li ul li ul li ul li ul,
+	div.prmenu_container ul li ul li ul li ul li ul li {
+		display: block;
+		background: #999999;
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+
+
+	div.prmenu_container ul li ul, 
+	div.prmenu_container ul li ul li ul {
 		display: block;
 		position: relative;
 		padding: 0;
@@ -279,23 +313,72 @@ and (max-width : 959px) {
 		left: 0
 	}
 
-	div.prmenu_container ul li ul li a {
-		padding-left: 10%;
+	div.prmenu_container ul li ul > li a {
+		padding-left: 7%;
+		opacity: 95%;
+	}
+
+	div.prmenu_container ul li ul > li > ul > li a {
+		padding-left: 14%;
+	}
+
+	div.prmenu_container ul li ul > li > ul > li > ul > li a {
+		padding-left: 21%;
 	}
 
 	div.prmenu_container ul li ul li ul {
 		display: block;
 		left: 0;
+		position: relative;
 	}
 
-	div.prmenu_container ul li ul li:hover ul {
-    display: none;
+	div.prmenu_container ul li ul li ul li ul {
+    	display: block;
+    	left: 0;
+    	position: relative;
 	}
 
-	div.prmenu_container ul li ul li:hover ul li {
-		display: none;
+	div.prmenu_container ul li ul li ul li ul li {
+		display: block;
+		left: 0;
+		position: relative;
 	}
 
+	div.prmenu_container ul li:not(:last-child) ul li ul {
+		left: 0;
+	}
+
+	/* DIFFERENTIATE NESTED LINKS FOR MOBILE MENU */
+
+	div.prmenu_container ul li ul li a:link, 
+	div.prmenu_container ul li ul li a:visited {
+    	background-color: #222222;
+	}
+
+	div.prmenu_container ul li ul li a:hover, 
+	div.prmenu_container ul li ul li a:active {
+    	background-color: #777777;
+	}
+
+	div.prmenu_container ul li ul li ul li a:link, 
+	div.prmenu_container ul li ul li ul li a:visited {
+    	background-color: #444444;
+	}
+
+	div.prmenu_container ul li ul li ul li a:hover, 
+	div.prmenu_container ul li ul li ul li a:active {
+    	background-color: #777777;
+	}
+
+	div.prmenu_container ul li ul li ul li ul li a:link, 
+	div.prmenu_container ul li ul li ul li ul li a:visited {
+    	background-color: #666666;
+	}
+
+	div.prmenu_container ul li ul li ul li ul li a:hover, 
+	div.prmenu_container ul li ul li ul li ul li a:active {
+    	background-color: #777777;
+	}
 
 
 	/*  END NAV  */

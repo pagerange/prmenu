@@ -66,7 +66,7 @@
 			plugin.o.el.wrap('<div class="prmenu_container"></div>');
 
 			// prepend the mobile menu toggle
-			plugin.o.el.parent().prepend('<ul class="menu-toggle"><li class="menu-toggle"><a href="#">Menu</a></li></ul>');
+			plugin.o.el.parent().prepend('<ul class="menu-toggle"><li class="menu-toggle"><a href="#"></a></li></ul>');
 
 			$('li.menu-toggle a').click(function() {
 				plugin.o.el.toggle();
