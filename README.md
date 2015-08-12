@@ -18,7 +18,7 @@ Set up your menu as standard ul with li.  Nest sub-menus as you need them:
 					<ul>
 						<li><a href="#">Doctor</a></li>
 						<li><a href="#">Lawyer</a></li>
-						<li><a href="#">Accountant</a>
+						<li><a href="#">Accountant</a></li>
 					</ul>
 				</li>
 			</ul>
@@ -35,7 +35,7 @@ Set up your menu as standard ul with li.  Nest sub-menus as you need them:
 					<ul>
 						<li><a href="#">Doctor</a></li>
 						<li><a href="#">Lawyer</a></li>
-						<li><a href="#">Accountant</a>
+						<li><a href="#">Accountant</a></li>
 					</ul>
 				</li>
 			</ul>
