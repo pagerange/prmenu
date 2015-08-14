@@ -1,6 +1,6 @@
 # jQuery PrMenu
 
-Very lightweight, responsive menu plugin for jQuery.
+Very lightweight, responsive menu plugin for jQuery.  Provides a menu with links evenly distributed across width of menu container.
 
 ## How to use
 
