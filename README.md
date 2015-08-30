@@ -56,7 +56,7 @@ $(document).ready(function(){
 
 ## Demo
 
-PrMenu [live demo](http://pagerange.com/jquery/prmenu)
+PrMenu [live demo](http://prmenu.pagerange.com)
 
 ## History
 
