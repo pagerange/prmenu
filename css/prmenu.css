@@ -17,7 +17,7 @@
 div.prmenu_container {
 	width: 100%;
 	position: relative;
-	height: 50px;
+	/* height: 50px; */
 }
 
 div.prmenu_container ul.menu-toggle {
@@ -49,19 +49,19 @@ div.prmenu_container ul li {
 	margin: 0;
 	text-align: center;
 	position: relative;
-	box-size: border-box;
+	box-sizing: border-box;
 }
 
 
 div.prmenu_container ul li a {
-	display: block;
+	display: inline-block;
 	width: 100%;
-	height: 50px;
+	/* height: 50px;
 	margin: 0;
-	padding: 0;
+	padding: 0; */
 	color: #FFF;
 	text-align: center;
-	line-height: 50px;
+	/* line-height: 50px; */
 	font-size: 14px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -69,6 +69,9 @@ div.prmenu_container ul li a {
 	background-image: url('../images/link_bg.jpg');
 	background-position: top right;
 	background-repeat: repeat-y;
+	box-sizing: border-box;
+	padding-left: 5%;
+	padding-right: 5%;
 }
 
 div.prmenu_container ul li:last-child {
@@ -85,7 +88,7 @@ div.prmenu_container ul li a:active {
 	background-color: #999999;
 }
 
-div.prmenu_container ul li a {
+div.prmenu_container ul li a:hover {
 	-webkit-transition: all 0.3s ease-in-out;
 	-moz-transition: all 0.3s ease-in-out;
 	-o-transition: all 0.3s ease-in-out;
@@ -233,7 +236,7 @@ and (max-width : 959px) {
 
 	div.prmenu_container ul.menu-toggle+ul {
 		position: absolute;
-		top: 50px;
+		/* top: 50px; */
 		z-index: 1000;
 	}
 
@@ -245,16 +248,16 @@ and (max-width : 959px) {
 	}
 
 	div.prmenu_container ul li.menu-toggle a {
-		text-align: right;
+	 /* height: 50px;
+		margin: 0;
+		padding: 0 0 0 2%;
+		line-height: 50px; */
+    text-align: right;
+		background-color: #000000;
 		overflow: hidden;
 		display: block;
 		width: 100%;
-		height: 50px;
-		margin: 0;
-		padding: 0 0 0 2%;
-		background-color: #000000;
 		color: #FFF;
-		line-height: 50px;
 		font-size: 18px;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -278,8 +281,8 @@ and (max-width : 959px) {
 		text-align: left;
 		padding-left: 3%;
 		width: 100%;
-		height: 50px !important;
-		line-height: 50px !important;
+		/* height: 50px !important;
+		line-height: 50px !important; */
 		font-size: 14px !important;
 	}
 
@@ -292,7 +295,7 @@ and (max-width : 959px) {
 	div.prmenu_container ul li ul li,
 	div.prmenu_container ul li ul li ul,
 	div.prmenu_container ul li ul li ul li,
-	div.prmenu_container ul li ul li ul li ul, 
+	div.prmenu_container ul li ul li ul li ul,
 	div.prmenu_container ul li ul li ul li ul li,
 	div.prmenu_container ul li ul li ul li ul li ul,
 	div.prmenu_container ul li ul li ul li ul li ul li {
@@ -304,7 +307,7 @@ and (max-width : 959px) {
 	}
 
 
-	div.prmenu_container ul li ul, 
+	div.prmenu_container ul li ul,
 	div.prmenu_container ul li ul li ul {
 		display: block;
 		position: relative;
@@ -350,32 +353,32 @@ and (max-width : 959px) {
 
 	/* DIFFERENTIATE NESTED LINKS FOR MOBILE MENU */
 
-	div.prmenu_container ul li ul li a:link, 
+	div.prmenu_container ul li ul li a:link,
 	div.prmenu_container ul li ul li a:visited {
     	background-color: #222222;
 	}
 
-	div.prmenu_container ul li ul li a:hover, 
+	div.prmenu_container ul li ul li a:hover,
 	div.prmenu_container ul li ul li a:active {
     	background-color: #777777;
 	}
 
-	div.prmenu_container ul li ul li ul li a:link, 
+	div.prmenu_container ul li ul li ul li a:link,
 	div.prmenu_container ul li ul li ul li a:visited {
     	background-color: #444444;
 	}
 
-	div.prmenu_container ul li ul li ul li a:hover, 
+	div.prmenu_container ul li ul li ul li a:hover,
 	div.prmenu_container ul li ul li ul li a:active {
     	background-color: #777777;
 	}
 
-	div.prmenu_container ul li ul li ul li ul li a:link, 
+	div.prmenu_container ul li ul li ul li ul li a:link,
 	div.prmenu_container ul li ul li ul li ul li a:visited {
     	background-color: #666666;
 	}
 
-	div.prmenu_container ul li ul li ul li ul li a:hover, 
+	div.prmenu_container ul li ul li ul li ul li a:hover,
 	div.prmenu_container ul li ul li ul li ul li a:active {
     	background-color: #777777;
 	}

@@ -1,0 +1,28 @@
+div.prmenu_container {
+  height: 50px;
+}
+
+div.prmenu_container ul li a {
+	height: 50px;
+	margin: 0;
+	padding: 0;
+	line-height: 50px;
+}
+
+div.prmenu_container ul.menu-toggle+ul {
+	top: 50px;
+}
+
+div.prmenu_container ul li.menu-toggle a {
+	  height: 50px;
+		margin: 0;
+		padding: 0 0 0 2%;
+		line-height: 50px;
+}
+
+div.prmenu_container ul li a {
+		height: 50px !important;
+		line-height: 50px !important;
+	}
+
+

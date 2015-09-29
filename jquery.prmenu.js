@@ -8,14 +8,14 @@
 
 /*
  *   Usage:
- * 
+ *
  *   $(document).ready(function(){
  * 	    $('ul#mymenu').prmenu();
  *   });
  *
  *   Note:
  *
- *   Options passed into the plugin are not yet used.  
+ *   Options passed into the plugin are not yet used.
  *   Menu styling, link color, etc., can be adjusted in the CSS for now.
  *
  */
@@ -31,12 +31,9 @@
 		// Set default options for plugin
 		// Not yet implemented... can't be changed
 		var defaults = {
-			maintain_ratio: true,
-			link: '#000000',
-			visited: '#000000',
-			hover: '#666666',
-			active: '#666666',
-			current: '#444444'
+			"fontsize": "14",
+			"height": "50",
+			"case": "uppercase"
 		};
 
 
@@ -65,6 +62,8 @@
 			// wrap element in prmenu_container div
 			plugin.o.el.wrap('<div class="prmenu_container"></div>');
 
+			plugin.o.el.parent().css('height', plugin.o.height + 'px');
+
 			// prepend the mobile menu toggle
 			plugin.o.el.parent().prepend('<ul class="menu-toggle"><li class="menu-toggle"><a href="#"></a></li></ul>');
 
@@ -73,12 +72,68 @@
 			});
 
 			$(window).resize(function() {
-				plugin.resizeLinks()
+					plugin.setDefaultCss();
+					plugin.resizeLinks();
+					plugin.setLinkHeight();
+					plugin.resizeLinks();
 			});
 
+			plugin.setDefaultCss();
+			plugin.resizeLinks();
+			plugin.setLinkHeight();
 			plugin.resizeLinks();
 
 		} // end activateMenu
+
+
+		plugin.setDefaultCss = function() {
+			var anchors = plugin.o.el.find('a');
+			anchors.css('font-size', plugin.o.fontsize + 'px');
+			anchors.css('text-transform', plugin.o.case);
+			$('div.prmenu_container').css('height', plugin.o.height + 'px');
+		}
+
+
+		plugin.setLinkHeight = function() {
+				var anchors = plugin.o.el.children('li').children('a');
+				var subanchors = plugin.o.el.children('li').children('ul').find('a');
+				anchors.each(function(){
+						var fontsize = anchors.css('font-size');
+						var lineheight = parseInt(fontsize) + 3;
+						var height = ($(this).height() > lineheight) ? lineheight * 2 : lineheight;
+						var containerheight = plugin.o.height;
+						var padding = Math.floor((containerheight - height) / 2);
+
+						/* console.log('fontsize:' + fontsize);
+						console.log('height:' + height);
+						console.log('linehheight:' + lineheight);
+						console.log('containerheight:' + containerheight);
+						console.log('padding:' + padding); */
+
+						var paddingbottom = containerheight - (height + padding)
+
+						if($(this).attr('id') == 'test') {
+							console.log(padding + paddingbottom + height);
+							console.log($('a#test').height());
+						}
+
+						$(this).css('line-height', lineheight + 'px');
+						$(this).css('padding-top', padding + 'px');
+						$(this).css('padding-bottom', paddingbottom + 'px');
+
+
+				});
+
+				subanchors.each(function(){
+						var fontsize = anchors.css('font-size');
+						var height = $(this).height();
+						var lineheight = parseInt(fontsize) + 3;
+						$(this).css('padding-top', '15px');
+						$(this).css('padding-bottom', '15px');
+
+				});
+
+		}
 
 
 		plugin.resizeLinks = function() {
@@ -117,6 +172,7 @@
 			links.last().css('width', last);
 			plugin.o.el.css('display', 'block');
 
+
 		}
 
 		plugin.setupMenuForHandheldDevices = function() {
@@ -136,6 +192,7 @@
 			links.css('left', '0');
 			links.show();
 			links.children('ul').show();
+
 
 		}
 
