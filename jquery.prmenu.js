@@ -9,14 +9,22 @@
 /*
  *   Usage:
  *
+ *
+ *		var options = {
+ *			"fontsize": "14", // menu link text font-size
+ *		  "height": "50", // height of the container element in px
+ *			"case": "uppercase", // text transform on link text
+ *			"linkbgcolor": "#000000", // base background color
+ *			"linktextcolor": "#ffffff", // link text color
+ *			"linktextweight": "400", // link text weight
+ *			"linktextfont": "sans-serif", // link text font
+ *			"hoverdark": false // hover background lighter or darker?
+ *		};
+ *
  *   $(document).ready(function(){
- * 	    $('ul#mymenu').prmenu();
+ * 	    $('ul#mymenu').prmenu(options);
  *   });
  *
- *   Note:
- *
- *   Options passed into the plugin are not yet used.
- *   Menu styling, link color, etc., can be adjusted in the CSS for now.
  *
  */
 
@@ -33,22 +41,25 @@
 			"fontsize": "14",
 			"height": "50",
 			"case": "uppercase",
-			"linkbgcolor": "#286090",
+			"linkbgcolor": "#000000",
 			"linktextcolor": "#ffffff",
 			"linktextweight": "400",
-			"linktextfont": "sans-serif"
+			"linktextfont": "sans-serif",
+			"hoverdark": false
 		};
 
 
 		// create empty object to hold options
 		plugin.o = {}
-		
+
 
 		// Function called when we initialize the plugin
 		plugin.init = function() {
 
 			// Merge user options with our defaults
 			plugin.o = $.extend({}, defaults, options);
+
+			plugin.o.shade = (plugin.o.hoverdark) ? -8 : 8;
 
 			// Add the target element to the options object
 			plugin.o.el = $(element);
@@ -70,8 +81,6 @@
 
 			// prepend the mobile menu toggle
 			plugin.o.el.parent().prepend('<ul class="menu-toggle"><li class="menu-toggle"><a href="#"></a></li></ul>');
-			
-			console.log(plugin.o.el.siblings('ul.menu-toggle').find('a'));
 
 			plugin.o.el.siblings('ul.menu-toggle').find('a').click(function() {
 				plugin.o.el.toggle();
@@ -87,26 +96,73 @@
 
 
 		plugin.setDefaultCss = function() {
+
 			var anchors = plugin.o.el.find('a');
+
 			anchors.css('font-size', plugin.o.fontsize + 'px');
 			anchors.css('text-transform', plugin.o.case);
 			anchors.css('color', plugin.o.linktextcolor);
-			anchors.css('background-color', plugin.o.linkbgcolor);
 			anchors.css('font-family', plugin.o.linktextfont);
 			anchors.css('font-weight', plugin.o.linktextweight);
-			anchors.hover(
-				function(){
-					$(this).css('background-color', plugin.shadecolor(plugin.o.linkbgcolor, -25));
-				},
-				function(){
-					$(this).css('background-color', plugin.o.linkbgcolor);
-				}
-			);
+
 			plugin.o.el.parent('div').css('min-height', plugin.o.height + 'px');
 			plugin.o.el.parent('div').find('li.menu-toggle a').each(function(){
 			  $(this).css('background-color', plugin.o.linkbgcolor)
 			});
-			
+
+			// Set background color for each anchor depending on its level
+			anchors.each(function(){
+				if($(this).parentsUntil(plugin.o.el, 'li').length == 1) {
+					plugin.o.l1_bg = plugin.o.linkbgcolor;
+					$(this).css('background-color', plugin.o.l1_bg);
+				}
+				if($(this).parentsUntil(plugin.o.el, 'li').length == 2) {
+					plugin.o.l2_bg = plugin.shadecolor( plugin.o.linkbgcolor, plugin.o.shade);
+					$(this).css('background-color', plugin.o.l2_bg);
+				}
+				if($(this).parentsUntil(plugin.o.el, 'li').length == 3) {
+					plugin.o.l3_bg = plugin.shadecolor( plugin.o.linkbgcolor, plugin.o.shade * 2);
+					$(this).css('background-color', plugin.o.l3_bg);
+				}
+				if($(this).parentsUntil(plugin.o.el, 'li').length == 4) {
+					plugin.o.l4_bg = plugin.shadecolor( plugin.o.linkbgcolor, plugin.o.shade * 3);
+					$(this).css('background-color', plugin.o.l4_bg);
+				}
+			});
+
+			// Set background color for each anchor on hover depending on its level
+			anchors.hover(
+				function(){
+					if($(this).parentsUntil(plugin.o.el, 'li').length == 1) {
+						$(this).css('background-color', plugin.shadecolor( plugin.o.l1_bg, plugin.o.shade));
+					}
+					if($(this).parentsUntil(plugin.o.el, 'li').length == 2) {
+						$(this).css('background-color', plugin.shadecolor( plugin.o.l2_bg, plugin.o.shade));
+					}
+					if($(this).parentsUntil(plugin.o.el, 'li').length == 3) {
+						$(this).css('background-color', plugin.shadecolor( plugin.o.l3_bg, plugin.o.shade));
+					}
+					if($(this).parentsUntil(plugin.o.el, 'li').length == 4) {
+						$(this).css('background-color', plugin.shadecolor( plugin.o.l4_bg, plugin.o.shade));
+					}
+				},
+				function(){
+					if($(this).parentsUntil(plugin.o.el, 'li').length == 1) {
+						$(this).css('background-color', plugin.o.l1_bg);
+					}
+					if($(this).parentsUntil(plugin.o.el, 'li').length == 2) {
+						$(this).css('background-color', plugin.o.l2_bg);
+					}
+					if($(this).parentsUntil(plugin.o.el, 'li').length == 3) {
+						$(this).css('background-color', plugin.o.l3_bg);
+					}
+					if($(this).parentsUntil(plugin.o.el, 'li').length == 4) {
+						$(this).css('background-color', plugin.o.l4_bg);
+					}
+				}
+			);
+
+
 		}
 
 		plugin.setupMenuDefaults = function() {
@@ -117,11 +173,11 @@
 		}
 
 
-		plugin.shadecolor = function (color, percent) {  
-		    var num = parseInt(color.slice(1),16), 
-		    amt = Math.round(2.55 * percent), 
-		    R = (num >> 16) + amt, 
-		    G = (num >> 8 & 0x00FF) + amt, 
+		plugin.shadecolor = function (color, percent) {
+		    var num = parseInt(color.slice(1),16),
+		    amt = Math.round(2.55 * percent),
+		    R = (num >> 16) + amt,
+		    G = (num >> 8 & 0x00FF) + amt,
 		    B = (num & 0x0000FF) + amt;
 		    return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
 		}
@@ -135,19 +191,7 @@
 						var height = ($(this).height() > lineheight) ? lineheight * 2 : lineheight;
 						var containerheight = plugin.o.height;
 						var padding = Math.floor((containerheight - height) / 2);
-
-						/* console.log('fontsize:' + fontsize);
-						console.log('height:' + height);
-						console.log('linehheight:' + lineheight);
-						console.log('containerheight:' + containerheight);
-						console.log('padding:' + padding); */
-
 						var paddingbottom = containerheight - (height + padding)
-
-						if($(this).attr('id') == 'test') {
-							console.log(padding + paddingbottom + height);
-							console.log($('a#test').height());
-						}
 
 						$(this).css('line-height', lineheight + 'px');
 						$(this).css('padding-top', padding + 'px');
