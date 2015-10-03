@@ -1,6 +1,6 @@
 /*
  * jQuery prmenmu plugin v 0.1.0
- * Copyright 2014 by Steve George
+ * Copyright 2014 - 2015 by Steve George
  * http://www.pagerange.com/projects/prmenu
  * Released under the MIT license.
  * https://github.com/pagerange/prmenu/blob/master/LICENSE
@@ -29,16 +29,20 @@
 	$.prmenu = function(element, options) {
 
 		// Set default options for plugin
-		// Not yet implemented... can't be changed
 		var defaults = {
 			"fontsize": "14",
 			"height": "50",
-			"case": "uppercase"
+			"case": "uppercase",
+			"linkbgcolor": "#286090",
+			"linktextcolor": "#ffffff",
+			"linktextweight": "400",
+			"linktextfont": "sans-serif"
 		};
 
 
 		// create empty object to hold options
 		plugin.o = {}
+		
 
 		// Function called when we initialize the plugin
 		plugin.init = function() {
@@ -66,8 +70,10 @@
 
 			// prepend the mobile menu toggle
 			plugin.o.el.parent().prepend('<ul class="menu-toggle"><li class="menu-toggle"><a href="#"></a></li></ul>');
+			
+			console.log(plugin.o.el.siblings('ul.menu-toggle').find('a'));
 
-			$('li.menu-toggle a').click(function() {
+			plugin.o.el.siblings('ul.menu-toggle').find('a').click(function() {
 				plugin.o.el.toggle();
 			});
 
@@ -84,7 +90,23 @@
 			var anchors = plugin.o.el.find('a');
 			anchors.css('font-size', plugin.o.fontsize + 'px');
 			anchors.css('text-transform', plugin.o.case);
-			$('div.prmenu_container').css('min-height', plugin.o.height + 'px');
+			anchors.css('color', plugin.o.linktextcolor);
+			anchors.css('background-color', plugin.o.linkbgcolor);
+			anchors.css('font-family', plugin.o.linktextfont);
+			anchors.css('font-weight', plugin.o.linktextweight);
+			anchors.hover(
+				function(){
+					$(this).css('background-color', plugin.shadecolor(plugin.o.linkbgcolor, -25));
+				},
+				function(){
+					$(this).css('background-color', plugin.o.linkbgcolor);
+				}
+			);
+			plugin.o.el.parent('div').css('min-height', plugin.o.height + 'px');
+			plugin.o.el.parent('div').find('li.menu-toggle a').each(function(){
+			  $(this).css('background-color', plugin.o.linkbgcolor)
+			});
+			
 		}
 
 		plugin.setupMenuDefaults = function() {
@@ -92,6 +114,16 @@
 					plugin.resizeLinks();
 					plugin.setLinkHeight();
 					plugin.resizeLinks();
+		}
+
+
+		plugin.shadecolor = function (color, percent) {  
+		    var num = parseInt(color.slice(1),16), 
+		    amt = Math.round(2.55 * percent), 
+		    R = (num >> 16) + amt, 
+		    G = (num >> 8 & 0x00FF) + amt, 
+		    B = (num & 0x0000FF) + amt;
+		    return "#" + (0x1000000 + (R<255?R<1?0:R:255)*0x10000 + (G<255?G<1?0:G:255)*0x100 + (B<255?B<1?0:B:255)).toString(16).slice(1);
 		}
 
 		plugin.setLinkHeight = function() {
