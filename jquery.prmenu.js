@@ -172,7 +172,10 @@
 					plugin.resizeLinks();
 		}
 
-
+		/*
+		* Programatically change color based on passed parameters.
+		* Source: http://stackoverflow.com/questions/5560248/programmatically-lighten-or-darken-a-hex-color-or-rgb-and-blend-colors
+		*/
 		plugin.shadecolor = function (color, percent) {
 		    var num = parseInt(color.slice(1),16),
 		    amt = Math.round(2.55 * percent),
