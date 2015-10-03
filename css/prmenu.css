@@ -2,9 +2,8 @@
  * @filename: menu.css
  * @project: PrMenu jQuery Plugin
  * @description: CSS required for responsive menu
- * @author: Steve George, steve@pagerange.com
  * @created_at: Sep 28, 2013
- * @updated_at: Sep 29, 2015
+ * @updated_at: Oct 3, 2015
  *
  * License:  PrMenu is released under the MIT License.
  * https://github.com/pagerange/prmenu/blob/master/LICENSE
@@ -17,7 +16,6 @@
 div.prmenu_container {
 	width: 100%;
 	position: relative;
-	/* height: 50px; */
 }
 
 div.prmenu_container ul.menu-toggle {
@@ -31,7 +29,6 @@ div.prmenu_container ul {
 	padding: 0;
 	margin: 0;
 	display: none;
-	/* overflow: hidden; */
 }
 
 div.prmenu_container ul.menu-toggle+ul {
@@ -56,12 +53,8 @@ div.prmenu_container ul li {
 div.prmenu_container ul li a {
 	display: inline-block;
 	width: 100%;
-	color: #FFF;
 	text-align: center;
-	font-size: 14px;
 	text-decoration: none;
-	text-transform: uppercase;
-	background-color: #000000;
 	border-right: 1px solid #cfcfcf;
 	box-sizing: border-box;
 	padding-left: 5%;
@@ -72,15 +65,6 @@ div.prmenu_container ul li:last-child {
 	background-image: none;
 }
 
-div.prmenu_container ul li a:link,
-div.prmenu_container ul li a:visited {
-	background-color: #000000;
-}
-
-div.prmenu_container ul li a:hover,
-div.prmenu_container ul li a:active {
-	background-color: #999999;
-}
 
 div.prmenu_container ul li a:hover {
 	-webkit-transition: all 0.3s ease-in-out;
@@ -148,37 +132,6 @@ div.prmenu_container ul li:last-child {
 	background-image: none;
 }
 
-div.prmenu_container ul li ul li a:link,
-div.prmenu_container ul li ul li a:visited {
-	background-color: #333333;
-}
-
-div.prmenu_container ul li ul li a:hover,
-div.prmenu_container ul li ul li a:active {
-	background-color: #777777;
-}
-
-div.prmenu_container ul li ul li a:link,
-div.prmenu_container ul li ul li a:visited {
-	background-color: #444444;
-}
-
-div.prmenu_container ul li ul li a:hover,
-div.prmenu_container ul li ul li a:active {
-	background-color: #777777;
-}
-
-div.prmenu_container ul li ul li a:link,
-div.prmenu_container ul li ul li a:visited {
-	background-color: #555555;
-}
-
-div.prmenu_container ul li ul li a:hover,
-div.prmenu_container ul li ul li a:active {
-	background-color: #777777;
-}
-
-
 
 /* small pads */
 @media all
@@ -230,7 +183,6 @@ and (max-width : 959px) {
 
 	div.prmenu_container ul.menu-toggle+ul {
 		position: absolute;
-		/* top: 50px; */
 		z-index: 1000;
 	}
 
@@ -242,19 +194,12 @@ and (max-width : 959px) {
 	}
 
 	div.prmenu_container ul li.menu-toggle a {
-	 /* height: 50px;
-		margin: 0;
-		padding: 0 0 0 2%;
-		line-height: 50px; */
     text-align: right;
-		background-color: #000000;
 		overflow: hidden;
 		display: block;
 		width: 100%;
-		color: #FFF;
 		font-size: 18px;
 		text-decoration: none;
-		text-transform: uppercase;
 		vertical-align: top;
 	}
 
@@ -275,9 +220,6 @@ and (max-width : 959px) {
 		text-align: left;
 		padding-left: 3%;
 		width: 100%;
-		/* height: 50px !important;
-		line-height: 50px !important; */
-		font-size: 14px !important;
 	}
 
 
@@ -294,7 +236,6 @@ and (max-width : 959px) {
 	div.prmenu_container ul li ul li ul li ul li ul,
 	div.prmenu_container ul li ul li ul li ul li ul li {
 		display: block;
-		background: #999999;
 		position: relative;
 		left: 0;
 		top: 0;
@@ -343,38 +284,6 @@ and (max-width : 959px) {
 
 	div.prmenu_container ul li:not(:last-child) ul li ul {
 		left: 0;
-	}
-
-	/* DIFFERENTIATE NESTED LINKS FOR MOBILE MENU */
-
-	div.prmenu_container ul li ul li a:link,
-	div.prmenu_container ul li ul li a:visited {
-    	background-color: #222222;
-	}
-
-	div.prmenu_container ul li ul li a:hover,
-	div.prmenu_container ul li ul li a:active {
-    	background-color: #777777;
-	}
-
-	div.prmenu_container ul li ul li ul li a:link,
-	div.prmenu_container ul li ul li ul li a:visited {
-    	background-color: #444444;
-	}
-
-	div.prmenu_container ul li ul li ul li a:hover,
-	div.prmenu_container ul li ul li ul li a:active {
-    	background-color: #777777;
-	}
-
-	div.prmenu_container ul li ul li ul li ul li a:link,
-	div.prmenu_container ul li ul li ul li ul li a:visited {
-    	background-color: #666666;
-	}
-
-	div.prmenu_container ul li ul li ul li ul li a:hover,
-	div.prmenu_container ul li ul li ul li ul li a:active {
-    	background-color: #777777;
 	}
 
 

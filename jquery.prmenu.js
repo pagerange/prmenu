@@ -1,5 +1,5 @@
 /*
- * jQuery prmenmu plugin v 0.1.0
+ * jQuery prmenmu plugin v1.0.0
  * Copyright 2014 - 2015 by Steve George
  * http://www.pagerange.com/projects/prmenu
  * Released under the MIT license.
