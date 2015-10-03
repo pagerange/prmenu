@@ -95,35 +95,102 @@
 
 <div class="content">
 
-	<h1>PrMenu Sample Page Content</h1>
-
-<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, <code>commodo vitae</code>, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-<h2>Header Level 2</h2>
-
-<ol>
-   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-   <li>Aliquam tincidunt mauris eu risus.</li>
-</ol>
-
-<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-<h3>Header Level 3</h3>
-
+	<h1 id="jquery-prmenu">jQuery PrMenu</h1>
+<p>Very lightweight, responsive menu plugin for jQuery. Provides a menu with links evenly distributed across width of menu container.</p>
+<h1 id="features">Features</h1>
 <ul>
-   <li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-   <li>Aliquam tincidunt mauris eu risus.</li>
+<li>Links are evenly distributed within menu container</li>
+<li>Maximum four menus levels (three nested)</li>
+<li>Auto text wrap of long link text (maximum two lines)</li>
+<li>Auto link background colors for all levels based on initial background color</li>
+<li>All settings can be changed by passing in your own options</li>
 </ul>
-
-<pre><code>
-#header h1 a {
-	display: block;
-	width: 300px;
-	height: 80px;
-}
+<h2 id="how-to-use">How to use</h2>
+<p>Set up your menu as standard ul with li. Nest sub-menus as you need them. As in the menu below, you can have a maximum of four menu levels including the top level:</p>
+<pre class="sourceCode html"><code class="sourceCode html">
+        <span class="kw">&lt;ul</span><span class="ot"> id=</span><span class="st">&quot;top-menu&quot;</span><span class="kw">&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Home<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+         <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Services<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;ul&gt;</span>
+                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Personal<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Business<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Professional Services<span class="kw">&lt;/a&gt;</span>
+                    <span class="kw">&lt;ul&gt;</span>
+                        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Doctor<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Lawyer<span class="kw">&lt;/a&gt;</span>
+                            <span class="kw">&lt;ul&gt;</span>
+                                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Tax<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Real Estate<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Criminal<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                            <span class="kw">&lt;/ul&gt;</span>
+                        <span class="kw">&lt;/li&gt;</span>
+                        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Accountant<span class="kw">&lt;/a&gt;</span>
+                    <span class="kw">&lt;/ul&gt;</span>
+                <span class="kw">&lt;/li&gt;</span>
+            <span class="kw">&lt;/ul&gt;</span>
+        <span class="kw">&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Shop<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Support for Customers<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>FAQ<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>About<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Contact<span class="kw">&lt;/a&gt;</span>
+            <span class="kw">&lt;ul&gt;</span>
+                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Personal<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Business<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Professional<span class="kw">&lt;/a&gt;</span>
+                    <span class="kw">&lt;ul&gt;</span>
+                        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Family Doctor Clinic<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Lawyer<span class="kw">&lt;/a&gt;</span>
+                            <span class="kw">&lt;ul&gt;</span>
+                                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Tax<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Real Estate Lawyer<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                                <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Criminal<span class="kw">&lt;/a&gt;&lt;/li&gt;</span>
+                            <span class="kw">&lt;/ul&gt;</span>
+                        <span class="kw">&lt;/li&gt;</span>
+                        <span class="kw">&lt;li&gt;&lt;a</span><span class="ot"> href=</span><span class="st">&quot;#&quot;</span><span class="kw">&gt;</span>Enterprise Accountant<span class="kw">&lt;/a&gt;</span>
+                    <span class="kw">&lt;/ul&gt;</span>
+                <span class="kw">&lt;/li&gt;</span>
+            <span class="kw">&lt;/ul&gt;</span>
+        <span class="kw">&lt;/li&gt;</span>
+    <span class="kw">&lt;/ul&gt;</span></code></pre>
+<p>Activate the menu when the document is ready:</p>
+<pre class="js"><code>
+        $(document).ready(function(){
+            $(&#39;#top-menu&#39;).prmenu();
+        });
 </code></pre>
+<p>You can optionally override the default plugin settings by passing in your own options:</p>
+<pre class="js"><code>
+            $(&#39;#top-menu&#39;).prmenu({
+                  &quot;fontsize&quot;: &quot;14&quot;,
+                    &quot;height&quot;: &quot;50&quot;,
+                    &quot;case&quot;: &quot;capitalize&quot;,
+                    &quot;linkbgcolor&quot;: &quot;#286090&quot;,
+                    &quot;linktextcolor&quot;: &quot;#ffffff&quot;,
+                    &quot;linktextweight&quot;: &quot;400&quot;,
+                    &quot;linktextfont&quot;: &quot;sans-serif&quot;,
+                    &quot;hoverdark&quot;: false
+                });
+</code></pre>
+<h2 id="options">Options</h2>
+<ul>
+<li><strong>fontsize</strong> : int : default 14 : Size of the menu link text in px</li>
+<li><strong>height</strong> : int : default 50 : height of link elements</li>
+<li><strong>case</strong> : string : default uppercase : valid css text transform declaration</li>
+<li><strong>lingbgcolor</strong> : string : default #000000 : valid css background color in hex format</li>
+<li><strong>linktextweight</strong> : int : default 400 : valid css font weight</li>
+<li><strong>linktextfont</strong> : string : default sans-serif : valid css font to be applied to link text</li>
+<li><strong>hoverdark</strong> : bool : default false : should hover state be darker than link background color?</li>
+</ul>
+<h2 id="demo">Demo</h2>
+<p>PrMenu <a href="http://prmenu.pagerange.com">live demo</a></p>
+<h2 id="history">History</h2>
+<p>Please see <a href="https://github.com/pagerange/prmenu/releases">the releases</a> changelog.</p>
+<h2 id="license">License</h2>
+<p>Released under <a href="http://www.opensource.org/licenses/mit-license.php">MIT Licence</a></p>
 
-</div>
+
+</div><!-- /content -->
 
 
 
