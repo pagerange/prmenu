@@ -93,13 +93,13 @@ You can optionally override the default plugin settings by passing in your own o
 
 ## Options
 
-	* *fontsize* : int : default 14 : Size of the menu link text in px
-	* *height* : int : default 50 : height of link elements
-	* *case* : string : default uppercase : valid css text transform declaration
-	* *lingbgcolor* : string : default #000000 : valid css background color in hex format
-	* *linktextweight* : int : default 400 : valid css font weight
-	* *linktextfont* : string : default sans-serif : valid css font to be applied to link text
-	* *hoverdark* : bool : default false : should hover state be darker than link background color?
+* *fontsize* : int : default 14 : Size of the menu link text in px
+* *height* : int : default 50 : height of link elements
+* *case* : string : default uppercase : valid css text transform declaration
+* *lingbgcolor* : string : default #000000 : valid css background color in hex format
+* *linktextweight* : int : default 400 : valid css font weight
+* *linktextfont* : string : default sans-serif : valid css font to be applied to link text
+* *hoverdark* : bool : default false : should hover state be darker than link background color?
 
 ## Demo
 
