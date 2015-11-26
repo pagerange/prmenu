@@ -83,7 +83,16 @@
 			plugin.o.el.parent().prepend('<ul class="menu-toggle"><li class="menu-toggle"><a href="#"></a></li></ul>');
 
 			plugin.o.el.siblings('ul.menu-toggle').find('a').click(function() {
-				plugin.o.el.toggle();
+				if(plugin.o.el.hasClass('hide')) {
+					plugin.o.el.removeClass('hide');
+					plugin.o.el.addClass('block');
+				} else if(plugin.o.el.hasClass('block')) {
+					plugin.o.el.removeClass('block');
+					plugin.o.el.addClass('hide');
+				} else {
+					plugin.o.el.removeClass('hide');
+					plugin.o.el.addClass('block');
+				}
 			});
 
 			$(window).resize(function() {
