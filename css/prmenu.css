@@ -144,14 +144,6 @@ and (max-width : 959px) {
 		display: none;
 	}
 
-	div.prmenu_container ul.block {
-		display: block !important;
-	}
-
-	div.prmenu_container ul.hide {
-		display: none !important;
-	}
-
 
 	div.prmenu_container ul {
 		width: 100%;
@@ -182,6 +174,18 @@ and (max-width : 959px) {
 	{
 		display: block;
 	}
+
+	/* display and hide the responsive nav */
+	
+	div.prmenu_container ul.block {
+		display: block !important;
+	}
+
+	div.prmenu_container ul.hide {
+		display: none !important;
+	}
+
+	/* ------------------------ */
 
 
 	div.prmenu_container ul {
