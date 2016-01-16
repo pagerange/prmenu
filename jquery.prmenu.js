@@ -1,6 +1,6 @@
 /*
  * jQuery prmenmu plugin v1.0.0
- * Copyright 2014 - 2015 by Steve George
+ * Copyright 2014 - 2016 by Steve George
  * http://www.pagerange.com/projects/prmenu
  * Released under the MIT license.
  * https://github.com/pagerange/prmenu/blob/master/LICENSE
@@ -179,6 +179,7 @@
 					plugin.resizeLinks();
 					plugin.setLinkHeight();
 					plugin.resizeLinks();
+					plugin.setLinkHeight();
 		}
 
 		/*
@@ -259,6 +260,10 @@
 			links.css('width', width);
 			links.last().css('width', last);
 			plugin.o.el.css('display', 'block');
+			
+			// Ensure menu is visible at desktop sizes
+			plugin.o.el.removeClass('hide');
+			plugin.o.el.addClass('block');
 
 
 		}
