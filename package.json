@@ -1,0 +1,15 @@
+{
+  "name": "prmenu",
+  "version": "1.0.1",
+  "description": "A minimalist responsive menu jquery plugin.",
+  "main": "jquery.prmenu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/pagerange/prmenu.git"
+  },
+  "author": "Steve George <steve@pagerange.com> (http://pagerange.com)",
+  "license": "MIT"
+}
