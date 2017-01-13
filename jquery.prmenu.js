@@ -279,6 +279,7 @@
 			plugin.o.el.css('width', '100%');
 			plugin.o.el.css('display', 'none');
 			plugin.o.el.parent().css('height', aheight);
+			plugin.o.el.removeClass('block');
 			links.css('width', '100%');
 			links.last().css('width', '100%');
 			links.css('position', 'relative');

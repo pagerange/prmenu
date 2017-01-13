@@ -189,7 +189,7 @@ and (max-width : 959px) {
 
 
 	div.prmenu_container ul {
-		display: block;
+		display: none;
 		overflow: hidden;
 	}
 
