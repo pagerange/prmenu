@@ -82,14 +82,19 @@
 			// prepend the mobile menu toggle
 			plugin.o.el.parent().prepend('<ul class="menu-toggle"><li class="menu-toggle"><a href="#"></a></li></ul>');
 
+			var menu_open = false;
+
 			plugin.o.el.siblings('ul.menu-toggle').find('a').click(function() {
 				if(plugin.o.el.hasClass('hide')) {
+					menu_open = true;
 					plugin.o.el.removeClass('hide');
 					plugin.o.el.addClass('block');
 				} else if(plugin.o.el.hasClass('block')) {
+					menu_open = false;
 					plugin.o.el.removeClass('block');
 					plugin.o.el.addClass('hide');
 				} else {
+					menu_open = true;
 					plugin.o.el.removeClass('hide');
 					plugin.o.el.addClass('block');
 				}
@@ -100,6 +105,13 @@
 			});
 
 			plugin.setupMenuDefaults();
+
+			$(window).on('scroll', function(){
+				if(menu_open) {
+					plugin.o.el.removeClass('hide');
+					plugin.o.el.addClass('block');
+				} 
+			});
 
 		} // end activateMenu
 
@@ -204,7 +216,7 @@
 						var height = ($(this).height() > lineheight) ? lineheight * 2 : lineheight;
 						var containerheight = plugin.o.height;
 						var padding = Math.floor((containerheight - height) / 2);
-						var paddingbottom = containerheight - (height + padding)
+						var paddingbottom = containerheight - (height + padding);
 
 						$(this).css('line-height', lineheight + 'px');
 						$(this).css('padding-top', padding + 'px');
