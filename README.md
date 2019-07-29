@@ -103,7 +103,7 @@ You can optionally override the default plugin settings by passing in your own o
 
 ## Demo
 
-PrMenu [live demo](https://pagerange.com/prmenu)
+PrMenu [live demo](https://prmenu.pagerange.com)
 
 ## History
 
