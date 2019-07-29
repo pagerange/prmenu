@@ -1,0 +1,303 @@
+/**
+ * @filename: menu.css
+ * @project: PrMenu jQuery Plugin
+ * @description: CSS required for responsive menu
+ * @created_at: Sep 28, 2013
+ * @updated_at: Oct 3, 2015
+ *
+ * License:  PrMenu is released under the MIT License.
+ * https://github.com/pagerange/prmenu/blob/master/LICENSE
+ *
+*/
+
+
+/*  NAV   */
+
+div.prmenu_container {
+	width: 100%;
+	position: relative;
+}
+
+div.prmenu_container ul.menu-toggle {
+	display: none;
+	position: relaitve;
+}
+
+div.prmenu_container ul {
+	width: 100%;
+	height: auto !important;
+	padding: 0;
+	margin: 0;
+	display: none;
+}
+
+div.prmenu_container ul.menu-toggle+ul {
+	position: absolute;
+	z-index: 1000;
+}
+
+div.prmenu_container ul li {
+	display: block;
+	float: left;
+	height: auto !important;
+	display: inline-block;
+	width: auto;
+	padding: 0;
+	margin: 0;
+	text-align: center;
+	position: relative;
+	box-sizing: border-box;
+}
+
+
+div.prmenu_container ul li a {
+	display: inline-block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	border-right: 1px solid #cfcfcf;
+	box-sizing: border-box;
+	padding-left: 5%;
+	padding-right: 5%;
+}
+
+div.prmenu_container ul li:last-child {
+	background-image: none;
+}
+
+
+div.prmenu_container ul li a:hover {
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+
+/*  END NAV  */
+
+
+/* SUB NAV */
+
+div.prmenu_container ul li ul {
+	display: none;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+div.prmenu_container ul li:hover ul {
+	display: block;
+}
+
+div.prmenu_container ul li ul li {
+	display: block;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	border-top: 1px solid #cfcfcf;
+}
+
+
+/* SUB SUB NAV */
+
+div.prmenu_container ul li ul li ul {
+	display: none;
+	position: absolute;
+	top: 0;
+}
+
+div.prmenu_container ul li:not(:last-child) ul li ul {
+	left: 100%;
+}
+
+div.prmenu_container ul li:last-child ul li ul {
+	right: 100%;
+}
+
+div.prmenu_container ul li ul li ul li {
+	display: none;
+}
+
+div.prmenu_container ul li ul li:hover > ul {
+	display: block;
+}
+
+div.prmenu_container ul li ul li:hover > ul > li {
+	display: block;
+}
+
+
+div.prmenu_container ul li:last-child {
+	background-image: none;
+}
+
+
+/* small pads */
+@media all
+and (max-width : 959px) {
+
+
+	/*  NAV   */
+
+	div.prmenu_container ul.menu-toggle {
+		display: none;
+	}
+
+
+	div.prmenu_container ul {
+		width: 100%;
+	}
+
+
+	/*  END NAV  */
+
+}
+
+
+/* handheld mobile devices */
+@media all and (max-width: 720px)
+{
+
+
+	/*  NAV   */
+
+
+	div.prmenu_container ul.menu-toggle {
+		display: block;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+	}
+
+	div.prmenu_container li.menu-toggle
+	{
+		display: block;
+	}
+
+	/* display and hide the responsive nav */
+	
+	div.prmenu_container ul.block {
+		display: block !important;
+	}
+
+	div.prmenu_container ul.hide {
+		display: none !important;
+	}
+
+	/* ------------------------ */
+
+
+	div.prmenu_container ul {
+		display: none;
+		overflow: hidden;
+	}
+
+	div.prmenu_container ul.menu-toggle+ul {
+		position: absolute;
+		z-index: 1000;
+	}
+
+
+	div.prmenu_container ul li {
+		display: block;
+		width: 100%;
+		border-top: 1px solid #cfcfcf;
+	}
+
+	div.prmenu_container ul li.menu-toggle a {
+    text-align: right;
+		overflow: hidden;
+		display: block;
+		width: 100%;
+		font-size: 18px;
+		text-decoration: none;
+		vertical-align: top;
+	}
+
+	div.prmenu_container ul li.menu-toggle a:after {
+		content: url('../images/menu-icon.png');
+		margin-left: 10px;
+		vertical-align: top;
+		margin-right: 1%;
+	}
+
+
+	div.prmenu_container ul {
+		display: none;
+	}
+
+
+	div.prmenu_container ul li a {
+		text-align: left;
+		padding-left: 3%;
+		width: 100%;
+	}
+
+
+
+	/* SUB MENU  */
+
+
+	div.prmenu_container ul li ul,
+	div.prmenu_container ul li ul li,
+	div.prmenu_container ul li ul li ul,
+	div.prmenu_container ul li ul li ul li,
+	div.prmenu_container ul li ul li ul li ul,
+	div.prmenu_container ul li ul li ul li ul li,
+	div.prmenu_container ul li ul li ul li ul li ul,
+	div.prmenu_container ul li ul li ul li ul li ul li {
+		display: block;
+		position: relative;
+		left: 0;
+		top: 0;
+	}
+
+
+	div.prmenu_container ul li ul,
+	div.prmenu_container ul li ul li ul {
+		display: block;
+		position: relative;
+		padding: 0;
+		margin: 0;
+		left: 0
+	}
+
+	div.prmenu_container ul li ul > li a {
+		padding-left: 7%;
+		opacity: 95%;
+	}
+
+	div.prmenu_container ul li ul > li > ul > li a {
+		padding-left: 14%;
+	}
+
+	div.prmenu_container ul li ul > li > ul > li > ul > li a {
+		padding-left: 21%;
+	}
+
+	div.prmenu_container ul li ul li ul {
+		display: block;
+		left: 0;
+		position: relative;
+	}
+
+	div.prmenu_container ul li ul li ul li ul {
+    	display: block;
+    	left: 0;
+    	position: relative;
+	}
+
+	div.prmenu_container ul li ul li ul li ul li {
+		display: block;
+		left: 0;
+		position: relative;
+	}
+
+	div.prmenu_container ul li:not(:last-child) ul li ul {
+		left: 0;
+	}
+
+
+	/*  END NAV  */
+}
