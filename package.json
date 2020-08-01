@@ -2,7 +2,7 @@
   "name": "prmenu",
   "version": "1.0.4",
   "description": "Very lightweight, responsive menu plugin for jQuery. Provides a menu with links evenly distributed across width of menu container.",
-  "main": "jquery.prmenu.js",
+  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

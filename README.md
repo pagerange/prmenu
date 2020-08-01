@@ -10,6 +10,45 @@ Very lightweight, responsive menu plugin for jQuery.  Provides a menu with links
 * Auto link background colors for all levels based on initial background color
 * All settings can be changed by passing in your own options
 
+## Installation
+
+
+### Install with `npm`
+
+
+```bash
+
+npm install prmenu
+
+```
+
+In your `app.js`:
+
+```javascript
+
+require('jquery')
+
+require('prmenu')
+
+import $ from "jquery"
+
+window.$ = $
+
+window.jQuery = $
+ 
+```
+
+### Install by download or from CDN
+
+```html
+
+<script src="jquery.js"></script>
+<script src="prmenu/prmenu.min.js"></script>
+<link rel="stylesheet" href="prmenu/css/prmenu.css" />
+
+```
+
+
 ## How to use
 
 Set up your menu as standard ul with li.  Nest sub-menus as you need them.  As in the menu below, you can have a maximum of four menu levels including the top level:
@@ -68,9 +107,9 @@ Activate the menu when the document is ready:
 
 ```js
 
-		$(document).ready(function(){
-			$('#top-menu').prmenu();
-		});
+$(document).ready(function(){
+	$('#top-menu').prmenu();
+});
 
 ```
 
@@ -78,16 +117,16 @@ You can optionally override the default plugin settings by passing in your own o
 
 ```js
 
-			$('#top-menu').prmenu({
-				  "fontsize": "14",
-					"height": "50",
-					"case": "capitalize",
-					"linkbgcolor": "#286090",
-					"linktextcolor": "#ffffff",
-					"linktextweight": "400",
-					"linktextfont": "sans-serif",
-					"hoverdark": false
-				});
+$('#top-menu').prmenu({
+  "fontsize": "14",
+	"height": "50",
+	"case": "capitalize",
+	"linkbgcolor": "#286090",
+	"linktextcolor": "#ffffff",
+	"linktextweight": "400",
+	"linktextfont": "sans-serif",
+	"hoverdark": false
+});
 
 ```
 
@@ -105,6 +144,10 @@ You can optionally override the default plugin settings by passing in your own o
 
 PrMenu [live demo](https://prmenu.pagerange.com)
 
+## npm
+
+[npm package](https://www.npmjs.com/package/prmenu)
+
 ## History
 
 Please see [the releases](https://github.com/pagerange/prmenu/releases) changelog.
@@ -112,3 +155,5 @@ Please see [the releases](https://github.com/pagerange/prmenu/releases) changelo
 ## License
 
 Released under [MIT Licence](http://www.opensource.org/licenses/mit-license.php)
+
+
