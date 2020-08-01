@@ -80,7 +80,7 @@
 			plugin.o.el.parent().css('height', plugin.o.height + 'px');
 
 			// prepend the mobile menu toggle
-			plugin.o.el.parent().prepend('<ul class="menu-toggle"><li class="menu-toggle"><a href="#"></a></li></ul>');
+			plugin.o.el.parent().prepend('<ul class="menu-toggle"><li id="menu-toggle" class="menu-toggle"><a href="#"><span></span><span></span><span></span></a></li></ul>');
 
 			var menu_open = false;
 
@@ -130,6 +130,8 @@
 			plugin.o.el.parent('div').find('li.menu-toggle a').each(function(){
 			  $(this).css('background-color', plugin.o.linkbgcolor)
 			});
+		
+			
 
 			// Set background color for each anchor depending on its level
 			anchors.each(function(){

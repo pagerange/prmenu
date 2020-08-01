@@ -213,14 +213,22 @@ and (max-width : 959px) {
 		font-size: 18px;
 		text-decoration: none;
 		vertical-align: top;
+		padding: 10px 0;
 	}
 
-	div.prmenu_container ul li.menu-toggle a:after {
-		content: url('../images/menu-icon.png');
-		margin-left: 10px;
-		vertical-align: top;
-		margin-right: 1%;
+	
+	div.prmenu_container ul li.menu-toggle a span {
+	    display: block;
+	    height: 4px;
+	    width: 100%;
+	    margin: 2px 0;
+	    background: #fff;
+	    width: 35px;
+	    float: right;
+	    clear: right;
+	    margin-right: 1%
 	}
+
 
 
 	div.prmenu_container ul {
